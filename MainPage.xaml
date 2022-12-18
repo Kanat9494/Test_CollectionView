@@ -8,7 +8,6 @@
 
 	<CollectionView 
 			x:Name="fro_CollectionView"
-			VerticalScrollBarVisibility="Always"
 			SelectionMode="Single"
 			VerticalOptions="Fill"
 			HorizontalOptions="Fill"
@@ -17,12 +16,13 @@
 
 		<CollectionView.ItemTemplate>
 			<DataTemplate x:DataType="Models:StockCard">
-				<SwipeView
-					Threshold="200">
+				<SwipeView>
 					<SwipeView.RightItems>
 						<SwipeItems>
-							<SwipeItemView>
-								<!--Delete icon-->
+							<SwipeItem Text="Favorite"
+									   BackgroundColor="LightGreen" />
+							<!--<SwipeItemView>
+								--><!--Delete icon--><!--
 								<Frame 
 									Grid.Column="0"
 									VerticalOptions="Fill"                   
@@ -38,7 +38,7 @@
 											<ColumnDefinition Width="*" />
 										</Grid.ColumnDefinitions>
 
-										<!--Delete-->
+										--><!--Delete--><!--
 										<Label 
 											Text="D"
 											FontSize="25" 
@@ -46,7 +46,7 @@
 											VerticalOptions="CenterAndExpand" />
 									</Grid>
 								</Frame>
-							</SwipeItemView>
+							</SwipeItemView>-->
 						</SwipeItems>
 					</SwipeView.RightItems>
 
