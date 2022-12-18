@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace Test_CollectionView
 {
-    public class MainPage_ViewModel
+    public class MainPageViewModel
     {
 
-        public MainPage_ViewModel()
+        private int CONST_NumberOfItems = 200;
+
+        public MainPageViewModel()
         {
             prp_StockCards = new ObservableCollection<Models.StockCard>();
 
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < CONST_NumberOfItems; i++)
             {
                 Models.StockCard tmp_StockCard = new Models.StockCard();
                 prp_StockCards.Add(tmp_StockCard);

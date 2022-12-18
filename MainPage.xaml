@@ -2,35 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Test_CollectionView.MainPage"
+			 xmlns:VM="clr-namespace:Test_CollectionView"
+             x:DataType="VM:MainPageViewModel"
              xmlns:Models="clr-namespace:Test_CollectionView.Models">
 
-    <CollectionView x:Name="fro_CollectionView"
-                    VerticalScrollBarVisibility="Always"
-                    SelectionMode="Single"
-                    VerticalOptions="Fill"
-                    HorizontalOptions="Fill"
-                    MinimumHeightRequest="5"
-                    ItemsSource="{Binding StockCards}">
+	<SwipeView
+		Threshold="200">
+		<SwipeView.RightItems>
+			<SwipeItems>
+				<SwipeItemView>
+					<!--Delete icon-->
+					<Frame 
+                        Grid.Column="0"
+                        VerticalOptions="Fill"                   
+                        HorizontalOptions="Fill"
+                        WidthRequest="88"
+                        BackgroundColor="red">
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="Models:StockCard">
-                <Grid Padding="2">
+						<Grid VerticalOptions="Center" HorizontalOptions="Center">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
+							<!--Delete-->
+							<Label 
+                                Text="D"
+                                FontSize="25" 
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand" />
+						</Grid>
+					</Frame>
+				</SwipeItemView>
+			</SwipeItems>
+		</SwipeView.RightItems>
+		
+		<!-- Content of SwipeView-->
+		<CollectionView 
+			x:Name="fro_CollectionView"
+			VerticalScrollBarVisibility="Always"
+			SelectionMode="Single"
+			VerticalOptions="Fill"
+			HorizontalOptions="Fill"
+			MinimumHeightRequest="5"
+			ItemsSource="{Binding StockCards}">
 
-                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"/>
-                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Price}"/>
+			<CollectionView.ItemTemplate>
+				<DataTemplate x:DataType="Models:StockCard">
+					<Grid Padding="2">
 
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
 
-    </CollectionView>
+						<Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"/>
+						<Label Grid.Row="0" Grid.Column="1" Text="{Binding Price}"/>
 
+					</Grid>
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+	</SwipeView>
 </ContentPage>

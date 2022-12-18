@@ -3,15 +3,15 @@
 public partial class MainPage : ContentPage
 {
 
-	private MainPage_ViewModel lc_MainPage_ViewModel;
+	private MainPageViewModel lc_VM;
 
     public MainPage()
 	{
 		InitializeComponent();
 
-        lc_MainPage_ViewModel = new MainPage_ViewModel();
+        lc_VM = new MainPageViewModel();
 
-        this.BindingContext = lc_MainPage_ViewModel;
+        this.BindingContext = lc_VM;
 
     }
 
