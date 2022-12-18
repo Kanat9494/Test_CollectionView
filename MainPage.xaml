@@ -19,10 +19,8 @@
 				<SwipeView>
 					<SwipeView.RightItems>
 						<SwipeItems>
-							<SwipeItem Text="Favorite"
-									   BackgroundColor="LightGreen" />
-							<!--<SwipeItemView>
-								--><!--Delete icon--><!--
+							<SwipeItemView>
+								<!--Delete icon-->
 								<Frame 
 									Grid.Column="0"
 									VerticalOptions="Fill"                   
@@ -38,7 +36,7 @@
 											<ColumnDefinition Width="*" />
 										</Grid.ColumnDefinitions>
 
-										--><!--Delete--><!--
+										<!--Delete-->
 										<Label 
 											Text="D"
 											FontSize="25" 
@@ -46,7 +44,7 @@
 											VerticalOptions="CenterAndExpand" />
 									</Grid>
 								</Frame>
-							</SwipeItemView>-->
+							</SwipeItemView>
 						</SwipeItems>
 					</SwipeView.RightItems>
 
