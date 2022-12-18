@@ -38,7 +38,7 @@
 				</SwipeItemView>
 			</SwipeItems>
 		</SwipeView.RightItems>
-		
+
 		<!-- Content of SwipeView-->
 		<CollectionView 
 			x:Name="fro_CollectionView"
