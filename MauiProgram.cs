@@ -1,5 +1,9 @@
-﻿namespace Test_CollectionView;
+﻿using DevExpress.Maui;
 
+
+namespace Test_CollectionView;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
@@ -7,6 +11,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseDevExpress()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

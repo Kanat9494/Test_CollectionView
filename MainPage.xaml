@@ -4,67 +4,107 @@
              x:Class="Test_CollectionView.MainPage"
 			 xmlns:VM="clr-namespace:Test_CollectionView"
              x:DataType="VM:MainPageViewModel"
-             xmlns:Models="clr-namespace:Test_CollectionView.Models">
+             xmlns:Models="clr-namespace:Test_CollectionView.Models"
+             xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+             xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid">
 
-	<CollectionView 
+    <!--CollectionView по порядку работает отлично-->
+    <!--<dxcv:DXCollectionView
+        ItemsSource="{Binding StockCards}">
+        <dxcv:DXCollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid>
+                    <StackLayout
+                        Padding="18,20,10,01"
+                        x:DataType="Models:StockCard">
+                        <Label
+                            Text="{Binding Name}"
+                            LineBreakMode="NoWrap"
+                            FontFamily="Roboto"
+                            FontSize="14"
+                            />
+
+                        <Label
+                            Text="{Binding Name}"
+                            LineBreakMode="NoWrap"
+                            FontFamily="Roboto"
+                            FontSize="12"
+                            />
+                    </StackLayout>
+                </Grid>
+            </DataTemplate>
+        </dxcv:DXCollectionView.ItemTemplate>
+    </dxcv:DXCollectionView>-->
+
+    <dxg:DataGridView
+        ItemsSource="{Binding StockCards}">
+        <dxg:DataGridView.Columns>
+            <dxg:TextColumn FieldName="Name" Caption="Names"/>
+            <dxg:TextColumn FieldName="Price" Caption="Prices"/>
+        </dxg:DataGridView.Columns>
+    </dxg:DataGridView>
+
+    <!--<StackLayout>
+        <CollectionView 
 			x:Name="fro_CollectionView"
 			SelectionMode="Single"
-			VerticalOptions="Fill"
+			VerticalOptions="FillAndExpand"
 			HorizontalOptions="Fill"
 			MinimumHeightRequest="5"
 			ItemsSource="{Binding StockCards}">
 
-		<CollectionView.ItemTemplate>
-			<DataTemplate x:DataType="Models:StockCard">
-				<SwipeView>
-					<SwipeView.RightItems>
-						<SwipeItems>
-							<SwipeItemView>
-								<!--Delete icon-->
-								<Frame 
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="Models:StockCard">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItemView>
+                                    --><!--Delete icon--><!--
+                                    <Frame 
 									Grid.Column="0"
 									VerticalOptions="Fill"                   
 									HorizontalOptions="Fill"
 									WidthRequest="88"
 									BackgroundColor="red">
 
-									<Grid VerticalOptions="Center" HorizontalOptions="Center">
-										<Grid.RowDefinitions>
-											<RowDefinition Height="*" />
-										</Grid.RowDefinitions>
-										<Grid.ColumnDefinitions>
-											<ColumnDefinition Width="*" />
-										</Grid.ColumnDefinitions>
+                                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
 
-										<!--Delete-->
-										<Label 
+                                            --><!--Delete--><!--
+                                            <Label 
 											Text="D"
 											FontSize="25" 
 											HorizontalOptions="CenterAndExpand"
 											VerticalOptions="CenterAndExpand" />
-									</Grid>
-								</Frame>
-							</SwipeItemView>
-						</SwipeItems>
-					</SwipeView.RightItems>
+                                        </Grid>
+                                    </Frame>
+                                </SwipeItemView>
+                            </SwipeItems>
+                        </SwipeView.RightItems>
 
-					<!-- Content of SwipeView-->
-					<Grid Padding="2">
+                        --><!-- Content of SwipeView--><!--
+                        <Grid Padding="2">
 
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-						</Grid.RowDefinitions>
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="*"/>
-						</Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
 
-						<Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"/>
-						<Label Grid.Row="0" Grid.Column="1" Text="{Binding Price}"/>
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding Price}"/>
 
-					</Grid>
-				</SwipeView>
-			</DataTemplate>
-		</CollectionView.ItemTemplate>
-	</CollectionView>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>-->
 </ContentPage>
